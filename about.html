@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من نحن - أحمد نجارة</title>
+    <meta name="description" content="تعرف على شركة أحمد نجارة - خبرة 15 عاماً في النجارة الخشبية وتصنيع الصالونات المغربية والمطابخ الخشبية">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #8B4513;
+            --secondary-color: #D2691E;
+            --accent-color: #CD853F;
+            --light-color: #F5DEB3;
+            --dark-color: #5D4037;
+        }
+        
+        body {
+            font-family: 'Tajawal', Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: var(--light-color) !important;
+        }
+        
+        .page-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1920x500') center/cover no-repeat;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--primary-color);
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        .about-image {
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature-box {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            margin-bottom: 30px;
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 50px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: white;
+            border: 4px solid var(--primary-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::after {
+            right: -12px;
+        }
+        
+        .right::after {
+            left: -12px;
+        }
+        
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+        
+        .lang-switcher {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .lang-switcher:hover {
+            background-color: var(--primary-color);
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        footer h5 {
+            color: var(--light-color);
+            margin-bottom: 20px;
+        }
+        
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        footer a:hover {
+            color: var(--light-color);
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            margin-right: 15px;
+            font-size: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 18px;
+            }
+            
+            .right {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">أحمد نجارة</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">المعرض</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">من نحن</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">اتصل بنا</a>
+                    </li>
+                </ul>
+                <button class="lang-switcher ms-3" id="langToggle">FR</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- رأس الصفحة -->
+    <section class="page-header">
+        <div class="container">
+            <h1>من نحن</h1>
+            <p class="lead">تعرف على قصة نجاحنا وخبرتنا في عالم النجارة</p>
+        </div>
+    </section>
+
+    <!-- قسم عن الشركة -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="section-title text-start">قصة أحمد نجارة</h2>
+                    <p>تأسست شركة أحمد نجارة منذ أكثر من 15 عاماً، بدأنا رحلتنا بمشغل صغير في الرباط، وبفضل التزامنا بالجودة والإتقان، نمت شركتنا لتصبح واحدة من أبرز شركات النجارة في منطقة الرباط-سلا-القنيطرة.</p>
+                    <p>نحن نؤمن بأن الجودة لا تتجزأ، لذلك نستخدم فقط أفضل أنواع الخشب الطبيعي ونتعامل مع موردين موثوقين لضمان منتج نهائي يستحق الثقة والافتخار.</p>
+                    <p>خلال مسيرتنا، نفذنا مئات المشاريع لزبائن من مختلف الأذواق والميزانيات، مما أكسبنا خبرة واسعة في فهم احتياجات العملاء وتحويل أفكارهم إلى واقع ملموس.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://via.placeholder.com/500x300" alt="ورشة العمل" class="img-fluid about-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم رحلتنا -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">رحلة التطور</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>2008 - البداية</h3>
+                        <p>تأسيس مشغل صغير في الرباط متخصص في النجارة التقليدية</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>2012 - التوسع الأول</h3>
+                        <p>توسيع نطاق العمل ليشمل مدينة سلا وزيادة فريق العمل</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>2015 - الانتقال للعصرية</h3>
+                        <p>دمج التقنيات الحديثة في التصميم والتصنيع مع الحفاظ على الأصالة</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>2018 - التوسع الجغرافي</h3>
+                        <p>بدء تقديم الخدمات في مدينة القنيطرة والمناطق المحيطة</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>2023 - الوضع الحالي</h3>
+                        <p>شركة راسخة مع فريق مكون من 15 حرفي ومئات المشاريع المنفذة</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم قيمنا -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">قيمنا ومبادئنا</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h4>الجودة</h4>
+                        <p>نلتزم بأعلى معايير الجودة في كل منتج نقدمه، من اختيار المواد الخام إلى التشطيب النهائي.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h4>الثقة</h4>
+                        <p>نبني علاقات طويلة الأمد مع عملائنا من خلال الشفافية والالتزام بالوعود.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4>الإبداع</h4>
+                        <p>نبتكر تصاميم فريدة تجمع بين الأصالة والحداثة لتلبي تطلعات عملائنا.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الفريق -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">فريقنا</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="https://via.placeholder.com/150" class="img-fluid rounded-start h-100" alt="أحمد، مؤسس الشركة">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">أحمد</h5>
+                                    <p class="card-text">مؤسس الشركة ونجار محترف بخبرة تزيد عن 20 عاماً في مجال النجارة.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="https://via.placeholder.com/150" class="img-fluid rounded-start h-100" alt="محمد، رئيس فريق النجارة">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">محمد</h5>
+                                    <p class="card-text">رئيس فريق النجارة، متخصص في التصاميم المعقدة والتفاصيل الدقيقة.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p>نحن فريق مكون من 15 حرفي مهرة، كل واحد متخصص في مجاله، يعملون معاً لتقديم أفضل النتائج لعملائنا.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- تذييل الصفحة -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>أحمد نجارة</h5>
+                    <p>شركة متخصصة في النجارة الخشبية وتصنيع الأثاث المخصص في الرباط، سلا والقنيطرة.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/212717707677"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>روابط سريعة</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="gallery.html">معرض الأعمال</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>معلومات الاتصال</h5>
+                    <p><i class="fas fa-phone"></i> الهاتف: +212717707677</p>
+                    <p><i class="fas fa-envelope"></i> البريد الإلكتروني: info@ahmed-menuiserie.ma</p>
+                    <p><i class="fas fa-map-marker-alt"></i> المناطق: الرباط، سلا، القنيطرة</p>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>© 2023 أحمد نجارة. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- زر الواتساب العائم -->
+    <a href="https://wa.me/212717707677" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // دالة لتبديل اللغة
+        document.getElementById('langToggle').addEventListener('click', function() {
+            const currentLang = document.documentElement.lang;
+            if (currentLang === 'ar') {
+                document.documentElement.lang = 'fr';
+                document.documentElement.dir = 'ltr';
+                this.textContent = 'AR';
+                alert('سيتم تحويل الموقع إلى اللغة الفرنسية - This is a placeholder for French translation');
+            } else {
+                document.documentElement.lang = 'ar';
+                document.documentElement.dir = 'rtl';
+                this.textContent = 'FR';
+                alert('سيتم تحويل الموقع إلى اللغة العربية');
+            }
+        });
+    </script>
+</body>
+</html>

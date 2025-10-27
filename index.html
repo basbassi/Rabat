@@ -3,108 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أحمد نجارة - نجارة خشبية في الرباط، سلا، القنيطرة</title>
-    <meta name="description" content="شركة أحمد نجارة المتخصصة في صناعة الصالونات المغربية، المطابخ الخشبية والأثاث المخصص في الرباط، سلا والقنيطرة بالمغرب">
-    <meta name="keywords" content="نجارة, صالونات مغربية, مطابخ خشبية, أثاث مخصص, الرباط, سلا, القنيطرة, نجارة خشب">
+    <title>أحمد نجارة - الرباط، سلا، القنيطرة</title>
+    <meta name="description" content="شركة أحمد نجارة المتخصصة في صناعة الصالونات المغربية، المطابخ الخشبية والأثاث المخصص">
     
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary-color: #8B4513;
-            --secondary-color: #D2691E;
-            --accent-color: #CD853F;
-            --light-color: #F5DEB3;
-            --dark-color: #5D4037;
+            --primary: #8B4513;
+            --secondary: #D2691E;
+            --light: #F5DEB3;
+            --dark: #5D4037;
         }
         
         body {
-            font-family: 'Tajawal', Arial, sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
             line-height: 1.6;
+            padding-top: 76px; /* Pour compenser la navbar fixe */
         }
         
         .navbar {
-            background-color: var(--primary-color);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background-color: var(--primary);
         }
         
-        .navbar-brand {
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-        
-        .nav-link {
+        .navbar-brand, .nav-link {
             color: white !important;
-            font-weight: 500;
-            transition: color 0.3s;
         }
         
-        .nav-link:hover {
-            color: var(--light-color) !important;
+        .nav-link:hover, .nav-link.active {
+            color: var(--light) !important;
         }
         
-        .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://res.cloudinary.com/demo/image/upload/v1680000000/wood-bg.jpg') center/cover;
             color: white;
-            padding: 150px 0;
+            padding: 100px 0;
             text-align: center;
-        }
-        
-        .hero-section h1 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            font-weight: bold;
-        }
-        
-        .hero-section p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
         }
         
         .section-title {
+            color: var(--primary);
+            margin-bottom: 30px;
             position: relative;
-            margin-bottom: 3rem;
-            text-align: center;
-            color: var(--primary-color);
+            padding-bottom: 15px;
         }
         
         .section-title:after {
             content: '';
             position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
+            bottom: 0;
+            right: 0;
             width: 80px;
             height: 3px;
-            background-color: var(--secondary-color);
+            background-color: var(--secondary);
         }
         
-        .card {
+        .service-card {
             border: none;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s;
             margin-bottom: 30px;
+            height: 100%;
         }
         
-        .card:hover {
+        .service-card:hover {
             transform: translateY(-10px);
         }
         
-        .card-img-top {
-            height: 250px;
+        .service-card img {
+            height: 200px;
             object-fit: cover;
         }
         
-        .card-title {
-            color: var(--primary-color);
-            font-weight: bold;
+        .gallery-item {
+            margin-bottom: 30px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .contact-info {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: 100%;
+        }
+        
+        .contact-icon {
+            font-size: 30px;
+            color: var(--primary);
+            margin-bottom: 15px;
         }
         
         .whatsapp-float {
@@ -131,57 +135,34 @@
             transform: scale(1.1);
         }
         
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
         .lang-switcher {
-            background-color: var(--secondary-color);
+            background-color: var(--secondary);
             color: white;
             border: none;
             padding: 8px 15px;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
         }
         
-        .lang-switcher:hover {
-            background-color: var(--primary-color);
-        }
-        
-        footer {
-            background-color: var(--dark-color);
+        .page-hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://res.cloudinary.com/demo/image/upload/v1680000000/wood-bg.jpg') center/cover;
             color: white;
-            padding: 50px 0 20px;
-        }
-        
-        footer h5 {
-            color: var(--light-color);
-            margin-bottom: 20px;
-        }
-        
-        footer a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        footer a:hover {
-            color: var(--light-color);
-        }
-        
-        .social-icons a {
-            display: inline-block;
-            margin-right: 15px;
-            font-size: 20px;
+            padding: 80px 0;
+            text-align: center;
         }
         
         @media (max-width: 768px) {
-            .hero-section {
-                padding: 100px 0;
+            .hero, .page-hero {
+                padding: 60px 0;
             }
             
-            .hero-section h1 {
-                font-size: 2rem;
-            }
-            
-            .section-title {
+            .hero h1 {
                 font-size: 1.8rem;
             }
         }
@@ -189,7 +170,7 @@
 </head>
 <body>
     <!-- شريط التنقل -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">أحمد نجارة</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -198,10 +179,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">الرئيسية</a>
+                        <a class="nav-link" href="index.html">الرئيسية</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="gallery.html">المعرض</a>
+                        <a class="nav-link" href="gallery.html">معرض الأعمال</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">من نحن</a>
@@ -215,103 +196,156 @@
         </div>
     </nav>
 
-    <!-- قسم البطل -->
-    <section class="hero-section">
-        <div class="container">
-            <h1>أحمد نجارة - إبداع في الخشب</h1>
-            <p class="lead">متخصصون في صناعة الصالونات المغربية، المطابخ الخشبية والأثاث المخصص</p>
-            <p>نعمل في الرباط، سلا والقنيطرة</p>
-            <a href="https://wa.me/212717707677" class="btn btn-primary btn-lg" target="_blank">
-                <i class="fab fa-whatsapp"></i> اطلب عرض سعر عبر الواتساب
-            </a>
-        </div>
-    </section>
+    <!-- محتوى الصفحات -->
+    
+    <!-- الصفحة الرئيسية -->
+    <div id="home-page">
+        <!-- القسم الرئيسي -->
+        <section class="hero">
+            <div class="container">
+                <h1 class="mb-4">أحمد نجارة - إبداع في الخشب</h1>
+                <p class="lead mb-4">متخصصون في صناعة الصالونات المغربية، المطابخ الخشبية والأثاث المخصص</p>
+                <p class="mb-4">نعمل في الرباط، سلا والقنيطرة</p>
+                <a href="https://wa.me/212717707677" class="btn btn-primary btn-lg" target="_blank">
+                    <i class="fab fa-whatsapp"></i> اطلب عرض سعر
+                </a>
+            </div>
+        </section>
 
-    <!-- قسم الخدمات -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="section-title">خدماتنا</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="صالونات مغربية">
-                        <div class="card-body">
-                            <h5 class="card-title">صالونات مغربية</h5>
-                            <p class="card-text">تصميم وتصنيع صالونات مغربية تقليدية وأصيلة بأجود أنواع الخشب وزخارف مغربية مميزة.</p>
-                            <a href="gallery.html?category=salons" class="btn btn-outline-primary">عرض الأعمال</a>
+        <!-- قسم الخدمات -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="section-title">خدماتنا</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card service-card">
+                            <img src="https://res.cloudinary.com/dh3ixolsa/image/upload/v1717500000/salon-marocain_azkf2e.jpg" class="card-img-top" alt="صالونات مغربية">
+                            <div class="card-body">
+                                <h5 class="card-title">صالونات مغربية</h5>
+                                <p class="card-text">تصميم وتصنيع صالونات مغربية تقليدية بأجود أنواع الخشب وزخارف مغربية مميزة.</p>
+                                <a href="gallery.html?category=salons" class="btn btn-outline-primary">عرض الأعمال</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="مطابخ خشبية">
-                        <div class="card-body">
-                            <h5 class="card-title">مطابخ خشبية</h5>
-                            <p class="card-text">مطابخ خشبية عصرية وتقليدية مصممة بدقة عالية وبمواد عالية الجودة تناسب جميع الأذواق.</p>
-                            <a href="gallery.html?category=cuisines" class="btn btn-outline-primary">عرض الأعمال</a>
+                    <div class="col-md-4">
+                        <div class="card service-card">
+                            <img src="https://res.cloudinary.com/dh3ixolsa/image/upload/v1717500000/cuisine-bois_klmnop.jpg" class="card-img-top" alt="مطابخ خشبية">
+                            <div class="card-body">
+                                <h5 class="card-title">مطابخ خشبية</h5>
+                                <p class="card-text">مطابخ خشبية عصرية وتقليدية مصممة بدقة عالية وبمواد عالية الجودة.</p>
+                                <a href="gallery.html?category=cuisines" class="btn btn-outline-primary">عرض الأعمال</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="أثاث مخصص">
-                        <div class="card-body">
-                            <h5 class="card-title">أثاث مخصص</h5>
-                            <p class="card-text">تصميم وتصنيع أثاث مخصص حسب طلبك، من غرف النوم إلى المكاتب وخزانات الملابس.</p>
-                            <a href="gallery.html?category=autres" class="btn btn-outline-primary">عرض الأعمال</a>
+                    <div class="col-md-4">
+                        <div class="card service-card">
+                            <img src="https://res.cloudinary.com/dh3ixolsa/image/upload/v1717500000/meuble-sur-mesure_qrstuv.jpg" class="card-img-top" alt="أثاث مخصص">
+                            <div class="card-body">
+                                <h5 class="card-title">أثاث مخصص</h5>
+                                <p class="card-text">تصميم وتصنيع أثاث مخصص حسب طلبك، من غرف النوم إلى المكاتب وخزانات الملابس.</p>
+                                <a href="gallery.html?category=autres" class="btn btn-outline-primary">عرض الأعمال</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- قسم عن الشركة -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <h2 class="section-title text-start">عن شركتنا</h2>
-                    <p>تأسست شركة أحمد نجارة منذ أكثر من 15 عاماً، ونحن نفتخر بتقديم أفضل الحلول في مجال النجارة والأثاث الخشبي. بفضل خبرتنا الطويلة واهتمامنا بالتفاصيل، نضمن لعملائنا منتجات عالية الجودة تلبي توقعاتهم.</p>
-                    <p>نستخدم فقط أفضل أنواع الخشب والمواد الخام، ونعتمد على حرفيين مهرة يجمعون بين الأساليب التقليدية والتقنيات الحديثة.</p>
-                    <a href="about.html" class="btn btn-primary">المزيد عنا</a>
+        <!-- قسم معرض الأعمال -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="section-title">معرض الأعمال</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="gallery-item">
+                            <img src="https://res.cloudinary.com/dh3ixolsa/image/upload/v1717500000/projet1_wxyzab.jpg" alt="مشروع 1">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="gallery-item">
+                            <img src="https://res.cloudinary.com/dh3ixolsa/image/upload/v1717500000/projet2_cdefgh.jpg" alt="مشروع 2">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="gallery-item">
+                            <img src="https://res.cloudinary.com/dh3ixolsa/image/upload/v1717500000/projet3_ijklmn.jpg" alt="مشروع 3">
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <img src="https://via.placeholder.com/500x300" alt="ورشة العمل" class="img-fluid rounded">
+                <div class="text-center mt-4">
+                    <a href="gallery.html" class="btn btn-primary">عرض المزيد</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- قسم مناطق العمل -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="section-title">مناطق عملنا</h2>
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <div class="p-4">
-                        <i class="fas fa-map-marker-alt fa-3x text-primary mb-3"></i>
-                        <h4>الرباط</h4>
-                        <p>عاصمة المغرب، نقدم خدماتنا في جميع أحياء الرباط</p>
+        <!-- قسم من نحن -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="section-title">من نحن</h2>
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p>تأسست شركة أحمد نجارة منذ أكثر من 15 عاماً، ونحن نفتخر بتقديم أفضل الحلول في مجال النجارة والأثاث الخشبي. بفضل خبرتنا الطويلة واهتمامنا بالتفاصيل، نضمن لعملائنا منتجات عالية الجودة تلبي توقعاتهم.</p>
+                        <p>نستخدم فقط أفضل أنواع الخشب والمواد الخام، ونعتمد على حرفيين مهرة يجمعون بين الأساليب التقليدية والتقنيات الحديثة.</p>
+                        <p>نعمل في منطقة الرباط، سلا والقنيطرة ونقدم خدماتنا للعملاء في هذه المناطق.</p>
+                        <a href="about.html" class="btn btn-primary">المزيد عنا</a>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-4">
-                        <i class="fas fa-map-marker-alt fa-3x text-primary mb-3"></i>
-                        <h4>سلا</h4>
-                        <p>مدينة سلا التاريخية وضواحيها</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-4">
-                        <i class="fas fa-map-marker-alt fa-3x text-primary mb-3"></i>
-                        <h4>القنيطرة</h4>
-                        <p>نغطي مدينة القنيطرة والمناطق المحيطة بها</p>
+                    <div class="col-md-6">
+                        <img src="https://res.cloudinary.com/dh3ixolsa/image/upload/v1717500000/atelier_opqrst.jpg" alt="ورشة العمل" class="img-fluid rounded">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- قسم اتصل بنا -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="section-title">اتصل بنا</h2>
+                <div class="row">
+                    <div class="col-md-8">
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">الاسم الكامل</label>
+                                        <input type="text" class="form-control" id="name" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="phone" class="form-label">رقم الهاتف</label>
+                                        <input type="tel" class="form-control" id="phone" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">الرسالة</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">إرسال الرسالة</button>
+                        </form>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="contact-info text-center">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h4>الهاتف</h4>
+                            <p>+212717707677</p>
+                            <a href="tel:+212717707677" class="btn btn-outline-primary">اتصل الآن</a>
+                        </div>
+                        <div class="contact-info text-center mt-4">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <h4>الواتساب</h4>
+                            <p>+212717707677</p>
+                            <a href="https://wa.me/212717707677" class="btn btn-success" target="_blank">ارسل رسالة</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <!-- تذييل الصفحة -->
     <footer>
@@ -320,11 +354,6 @@
                 <div class="col-md-4">
                     <h5>أحمد نجارة</h5>
                     <p>شركة متخصصة في النجارة الخشبية وتصنيع الأثاث المخصص في الرباط، سلا والقنيطرة.</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/212717707677"><i class="fab fa-whatsapp"></i></a>
-                    </div>
                 </div>
                 <div class="col-md-4">
                     <h5>روابط سريعة</h5>
@@ -337,9 +366,8 @@
                 </div>
                 <div class="col-md-4">
                     <h5>معلومات الاتصال</h5>
-                    <p><i class="fas fa-phone"></i> الهاتف: +212717707677</p>
-                    <p><i class="fas fa-envelope"></i> البريد الإلكتروني: info@ahmed-menuiserie.ma</p>
-                    <p><i class="fas fa-map-marker-alt"></i> المناطق: الرباط، سلا، القنيطرة</p>
+                    <p><i class="fas fa-phone"></i> +212717707677</p>
+                    <p><i class="fas fa-map-marker-alt"></i> الرباط، سلا، القنيطرة</p>
                 </div>
             </div>
             <hr>
@@ -354,42 +382,50 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Bootstrap 5 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <script>
-        // تهيئة Firebase
-        const firebaseConfig = {
-            apiKey: "YOUR_API_KEY",
-            authDomain: "YOUR_AUTH_DOMAIN",
-            projectId: "YOUR_PROJECT_ID",
-            storageBucket: "YOUR_STORAGE_BUCKET",
-            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-            appId: "YOUR_APP_ID"
-        };
-        
-        // تهيئة Firebase
-        firebase.initializeApp(firebaseConfig);
-        
-        // دالة لتبديل اللغة
+        // تبديل اللغة
         document.getElementById('langToggle').addEventListener('click', function() {
             const currentLang = document.documentElement.lang;
             if (currentLang === 'ar') {
-                // التبديل إلى الفرنسية
                 document.documentElement.lang = 'fr';
                 document.documentElement.dir = 'ltr';
                 this.textContent = 'AR';
-                // هنا يجب إضافة كود لتحويل جميع النصوص إلى الفرنسية
+                // هنا يمكنك إضافة الترجمة الفرنسية
                 alert('سيتم تحويل الموقع إلى اللغة الفرنسية - This is a placeholder for French translation');
             } else {
-                // التبديل إلى العربية
                 document.documentElement.lang = 'ar';
                 document.documentElement.dir = 'rtl';
                 this.textContent = 'FR';
-                // هنا يجب إضافة كود لتحويل جميع النصوص إلى العربية
                 alert('سيتم تحويل الموقع إلى اللغة العربية');
             }
         });
+
+        // معالجة نموذج الاتصال
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // جمع بيانات النموذج
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+            // إنشاء رابط واتساب
+            const whatsappMessage = `مرحبا، أنا ${name}، رقم هاتفي: ${phone}. ${message}`;
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            const whatsappURL = `https://wa.me/212717707677?text=${encodedMessage}`;
+            
+            // فتح واتساب
+            window.open(whatsappURL, '_blank');
+            
+            // إعادة تعيين النموذج
+            this.reset();
+            
+            // رسالة نجاح
+            alert('شكراً لك! سيتم فتح تطبيق الواتساب لإرسال رسالتك.');
+        });
     </script>
 </body>
-</html>
+</html>S
